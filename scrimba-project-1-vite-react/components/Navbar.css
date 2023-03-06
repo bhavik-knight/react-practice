@@ -1,0 +1,43 @@
+@import "../index.css";
+
+.navbar {
+    background-color: black;
+    height: 90px;
+    justify-content: space-between;
+    align-self: center;
+    display: flex;
+}
+
+.nav-logo {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    width: 160px;
+    height: 30px;
+}
+
+.nav-logo img {
+    height: 30px;
+    width: 30px;
+    color: #00D8FF;
+    justify-content: flex-start;
+    margin-inline: 10px;
+}
+
+.nav-logo h3 {
+    color: #61DAFB;
+    margin-right: auto;
+}
+
+.extra-text {
+    display: flex;
+    width: 300px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar h4 {
+    color: white;
+    margin-inline: 10px;
+}
