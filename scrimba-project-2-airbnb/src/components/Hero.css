@@ -1,0 +1,27 @@
+@import "../index.css";
+
+.hero-content {
+    display: flex;
+    height: 290px;
+    justify-content: center;
+}
+
+.hero-content img {
+    margin: 20px 54px;
+    box-shadow: 1px 1px 4px grey;
+}
+
+.hero-text {
+    margin: 0px 36px;
+}
+
+.hero-text h1 {
+    width: 350px;
+    height: 40px;
+}
+
+.hero-text p {
+    margin-top: 16px;
+    width: 320px;
+    height: 56px;
+}
