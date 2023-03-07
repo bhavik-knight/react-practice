@@ -1,0 +1,61 @@
+@import "../index.css";
+
+.card {
+    margin: 10px 9px;
+    font-size: 12px;
+    height: fit-content;
+    position: relative;
+}
+
+.card>img {
+    width: 175px;
+    height: 235px;
+    border-radius: 9px;
+}
+
+.card-rating {
+    display: flex;
+    align-content: center;
+    height: 14px;
+}
+
+.card-rating>img {
+    width: 14px;
+}
+
+.card-rating>.rating,
+.card-rating>.count {
+    width: 18px;
+}
+
+.card-rating>.count {
+    color: #918E9B;
+}
+
+.card-rating>.location {
+    width: 23px;
+    color: #918E9B;
+}
+
+.card-text>.card-title {
+    width: 175px;
+    font-weight: 300;
+}
+
+.card-text>.card-price {
+    width: 144px;
+}
+
+.card .card-badge {
+    position: absolute;
+    width: fit-content;
+    height: 15px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px;
+    margin: 0 auto;
+    background-color: white;
+    left: 10px;
+    top: 10px;
+    border-radius: 2px;
+}
