@@ -12,7 +12,7 @@
 
 .navbar>.nav-logo {
     display: flex;
-    width: 180px;
+    width: fit-content;
     height: 24px;
     margin: 20px auto 20px 20px;
 }
@@ -29,7 +29,7 @@
 }
 
 .navbar>.nav-title {
-    width: 190px;
+    width: fit-content;
     margin: 20px;
     font-size: 16px;
     font-weight: 500;
