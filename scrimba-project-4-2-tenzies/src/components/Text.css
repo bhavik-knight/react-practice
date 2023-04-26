@@ -1,0 +1,11 @@
+.gameText {
+    margin-top: 64px;
+    margin-bottom: 0;
+    flex-direction: column;
+}
+
+.gameText>h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
