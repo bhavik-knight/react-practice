@@ -1,4 +1,24 @@
 @import url("./components/Box.css");
 @import url("./components/Text.css");
-@import url("./components/Button.css");
-@import url("./components/Dice.css");
+@import url("./components/Die.css");
+
+.rollButton {
+    width: 128px;
+    height: 64px;
+    font-size: 1.5em;
+    color: white;
+    border: none;
+    background-color: blueviolet;
+    border-radius: 16px;
+    box-shadow: 2px 2px 8px grey;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.rollButton:hover {
+    border: 4px solid blue;
+}
+
+.rollButton:active {
+    background-color: violet;
+}

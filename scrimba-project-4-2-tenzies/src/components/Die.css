@@ -1,0 +1,24 @@
+.dieButton {
+    width: 64px;
+    height: 64px;
+    font-size: 2em;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 2px 2px grey;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dieButton:hover {
+    border: 2px solid green;
+}
+
+.dieButton:active {
+    background-color: aqua;
+}
+
+.dieSelected {
+    background-color: lightgreen;
+}

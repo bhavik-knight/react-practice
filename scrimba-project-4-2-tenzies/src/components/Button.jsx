@@ -10,7 +10,7 @@ function RollButton(props) {
     return (
         <button
             className="rollButton"
-            onClick={handleClick}
+            onClick={() => props.handleNewRoll}
         >
             Roll
         </button>
