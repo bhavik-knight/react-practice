@@ -32,6 +32,28 @@
     justify-items: center;
 }
 
-.rollButtonArea {
+.buttonArea {
     padding: 16px;
+    text-transform: capitalize;
+}
+
+.buttonArea>button {
+    width: 128px;
+    height: 64px;
+    font-size: 1.5em;
+    color: white;
+    border: none;
+    background-color: blueviolet;
+    border-radius: 16px;
+    box-shadow: 2px 2px 8px grey;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.buttonArea>button:hover {
+    border: 4px solid blue;
+}
+
+.buttonArea>button:active {
+    background-color: violet;
 }
