@@ -7,12 +7,12 @@
     background-color: black;
     text-align: center;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
 }
 
-.gameBox>h1 {
+.gameStatusArea>h1 {
     margin: 0;
     color: greenyellow;
 }
@@ -20,12 +20,12 @@
 .gameArea {
     display: flex;
     flex-direction: column;
-    margin: 10%;
+    margin: 20px;
     padding: 20px;
     background-color: lightgrey;
     border-radius: 10px;
-    height: 80%;
     justify-content: space-between;
+    height: fit-content;
 }
 
 .diceArea {
@@ -45,7 +45,7 @@
 
 .buttonArea>button {
     padding: 10px;
-    width: fix-content;
+    width: 200px;
     height: 64px;
     font-size: 1.5em;
     color: white;

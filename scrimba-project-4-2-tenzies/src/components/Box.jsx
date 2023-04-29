@@ -16,7 +16,13 @@ function Box() {
     const [isWon, setIsWon] = useState(false)
 
     // display button
-    const [button, setButton] = useState(displayButton(false))
+    const [button, setButton] = useState(displayResetButton(false))
+
+    // number of turns to complete the game
+    const [turns, setTurns] = useState(0)
+
+    // keep track of the score
+    const [score, setScore] = useState([])
 
     // render this function whenever dice changes
     useEffect(() => {
@@ -32,12 +38,25 @@ function Box() {
         // if all are selected and all are the same then game is won
         setIsWon(allSelected && allSame)
 
-        // display console log only when you win
-        isWon && console.log("YOU WIN!")
+        // do some tasks on winning the game
+        if (isWon) {
+            // display console log
+            console.log("You win!")
 
-        // set display button to reset after winning; keep on roll otherwise
-        isWon && setButton(<button className="resetButton" onClick={resetGame}>new game</button>)
+            // display some text on winning the game
+            document.querySelector(".gameStatusArea").style.visibility = `visible`
 
+            // display the title according to the game status
+            document.title = "Tenzies - Win"
+
+            // display the button according to the game status
+            // display the game won button
+            setButton(displayResetButton(true))
+        } else {
+            document.querySelector(".gameStatusArea").style.visibility = `hidden`
+            document.title = "Tenzies - Game"
+            setButton(displayResetButton(false))
+        }
     }, [dice, isWon])
 
     // function to create a die object
@@ -60,6 +79,7 @@ function Box() {
 
     // to handle the new roll of dice on the roll button click event
     function handleNewRoll() {
+        setTurns(prevTurn => prevTurn + 1)
         setDice(prevDice => prevDice.map(function (die) {
             if (die.isSelected) {
                 return die
@@ -92,13 +112,13 @@ function Box() {
         />
     })
 
-    function displayButton(isWon) {
+    function displayResetButton(isWon) {
         if (isWon) {
             return <button
                 className="resetButton"
                 onClick={resetGame}
             >
-                reset
+                new game
             </button>
         } else {
             return <button
@@ -114,7 +134,8 @@ function Box() {
     function resetGame() {
         setDice(rollNewDice(numDice))
         setIsWon(false)
-        setButton(displayButton(false))
+        setButton(displayResetButton(false))
+        setTurns(0)
     }
 
     return (
@@ -127,12 +148,13 @@ function Box() {
                 <div className="buttonArea">
                     {button}
                 </div>
+                <h2>Number of rolls to win: {turns}</h2>
             </div>
 
-            {/* display the game winning text */}
-            {isWon && <h1>Congratulations! You Win</h1>}
-
-            {/* confetti shower on winning the game */}
+            <div className="gameStatusArea">
+                {/* display the game winning text */}
+                <h1>Congratulations! You Win</h1>
+            </div>
             {isWon && <Confetti width={window.innerWidth} height={window.innerHeight} />}
         </main >
     )
