@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
-import { RollButton } from "./Button.jsx"
+import React from "react"
+import Confetti from "react-confetti"
+import { useState, useEffect } from "react"
 import { GameText } from "./Text.jsx"
 import { Die } from "./Die.jsx"
 import { nanoid } from "nanoid"
@@ -35,9 +36,8 @@ function Box() {
         isWon && console.log("YOU WIN!")
 
         // set display button to reset after winning; keep on roll otherwise
-        isWon && setButton(
-            <button className="resetButton" onClick={resetGame}>reset</button>
-        )
+        isWon && setButton(<button className="resetButton" onClick={resetGame}>new game</button>)
+
     }, [dice, isWon])
 
     // function to create a die object
@@ -105,7 +105,7 @@ function Box() {
                 className="rollButton"
                 onClick={handleNewRoll}
             >
-                roll
+                roll dice
             </button>
         }
     }
@@ -128,6 +128,12 @@ function Box() {
                     {button}
                 </div>
             </div>
+
+            {/* display the game winning text */}
+            {isWon && <h1>Congratulations! You Win</h1>}
+
+            {/* confetti shower on winning the game */}
+            {isWon && <Confetti width={window.innerWidth} height={window.innerHeight} />}
         </main >
     )
 }
