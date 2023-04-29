@@ -125,7 +125,7 @@ function Box() {
                 className="rollButton"
                 onClick={handleNewRoll}
             >
-                roll dice
+                roll
             </button>
         }
     }
